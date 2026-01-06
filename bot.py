@@ -15,10 +15,9 @@ import aiohttp
 # Загрузка переменных окружения
 load_dotenv()
 
-# Исправленный блок (строки 18-20)
-BOT_TOKEN = 'BOT_TOKEN'
-GROQ_API_KEY = 'API_KEY'
-ADMIN_ID = 12345678  # Здесь убираем кавычки и int(), пишем просто число
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+ADMIN_ID = int(os.getenv('ADMIN_ID'))
 
 # Инициализация бота БЕЗ DefaultBotProperties (это важно для business!)
 bot = Bot(token=BOT_TOKEN)
